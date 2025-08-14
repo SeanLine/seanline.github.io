@@ -145,7 +145,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://seanline.github.io/2025/07/18/github-actions/">
+    <link itemprop="mainEntityOfPage" href="https://seanline.github.io/2025/08/14/github-actions/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -159,7 +159,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2025/07/18/github-actions/" class="post-title-link" itemprop="url">github-actions</a>
+            <a href="/2025/08/14/github-actions/" class="post-title-link" itemprop="url">github-actions</a>
         </h2>
 
         <div class="post-meta">
@@ -169,7 +169,7 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2025-07-18 10:43:43" itemprop="dateCreated datePublished" datetime="2025-07-18T10:43:43+00:00">2025-07-18</time>
+              <time title="Created: 2025-08-14 09:07:21" itemprop="dateCreated datePublished" datetime="2025-08-14T09:07:21+00:00">2025-08-14</time>
             </span>
 
           
@@ -203,7 +203,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://seanline.github.io/2025/07/18/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://seanline.github.io/2025/08/14/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -217,7 +217,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2025/07/18/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+            <a href="/2025/08/14/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
         </h2>
 
         <div class="post-meta">
@@ -227,7 +227,7 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2025-07-18 10:43:43" itemprop="dateCreated datePublished" datetime="2025-07-18T10:43:43+00:00">2025-07-18</time>
+              <time title="Created: 2025-08-14 09:07:21" itemprop="dateCreated datePublished" datetime="2025-08-14T09:07:21+00:00">2025-08-14</time>
             </span>
 
           
@@ -304,7 +304,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2025-07-18 10:43:43" itemprop="dateModified" datetime="2025-07-18T10:43:43+00:00">2025-07-18</time>
+                <time title="Modified: 2025-08-14 09:07:21" itemprop="dateModified" datetime="2025-08-14T09:07:21+00:00">2025-08-14</time>
               </span>
 
           
@@ -320,15 +320,34 @@
       
           <h2 id="新建分支"><a href="#新建分支" class="headerlink" title="新建分支"></a>新建分支</h2><ul>
 <li>git checkout -b <branch-name></li>
+</ul>
+<h3 id="基于远程建立分支"><a href="#基于远程建立分支" class="headerlink" title="基于远程建立分支"></a>基于远程建立分支</h3><ul>
 <li>git fetch origin</li>
-<li>git checkout -b <branch-name> origin&#x2F;&lt;远程分支&gt;</li>
+<li>git branch –no-track <branch-name> origin&#x2F;&lt;远程分支&gt;</li>
+<li>git branch <branch-name> &lt;本地分支&gt;</li>
+<li>git checkout –no-track -b <branch-name> origin&#x2F;&lt;远程分支&gt;</li>
+</ul>
+<h3 id="分支推上远程"><a href="#分支推上远程" class="headerlink" title="分支推上远程"></a>分支推上远程</h3><ul>
 <li>git push origin <branch-name></li>
 </ul>
-<h2 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h2><ul>
+<h3 id="拉去远程分支到本地，并跟踪远程分支"><a href="#拉去远程分支到本地，并跟踪远程分支" class="headerlink" title="拉去远程分支到本地，并跟踪远程分支"></a>拉去远程分支到本地，并跟踪远程分支</h3><ul>
+<li>git checkout –track origin&#x2F;<branch-name></li>
+</ul>
+<h3 id="修改分支名"><a href="#修改分支名" class="headerlink" title="修改分支名"></a>修改分支名</h3><ul>
+<li>git branch -m <old-branch-name> <new-branch-name></li>
+</ul>
+<h3 id="检测分支是否在远程"><a href="#检测分支是否在远程" class="headerlink" title="检测分支是否在远程"></a>检测分支是否在远程</h3><ul>
+<li>git show-branch origin&#x2F;<branch-name></li>
+</ul>
+<h3 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h3><ul>
 <li>git branch -d <branch-name></li>
 <li>git push origin –delete <branch-name></li>
 </ul>
-<h2 id="提交"><a href="#提交" class="headerlink" title="提交"></a>提交</h2><ul>
+<h3 id="查看本地分支关联的远程分支"><a href="#查看本地分支关联的远程分支" class="headerlink" title="查看本地分支关联的远程分支"></a>查看本地分支关联的远程分支</h3><ul>
+<li>git config –get branch.<branch-name>.merge</li>
+<li>git config –get branch.<branch-name>.remote</li>
+</ul>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><h2 id="提交"><a href="#提交" class="headerlink" title="提交"></a>提交</h2><ul>
 <li>git add .</li>
 <li>git commit -m “commit message”</li>
 <li>git commit -m “标题” -m “内容”</li>
@@ -350,6 +369,7 @@
 <li>git reset –hard origin&#x2F;<branch-name></li>
 <li>git reset –hard HEAD^</li>
 <li>git reset –hard HEAD~3</li>
+<li>git reset –soft HEAD~</li>
 </ul>
 
       
@@ -401,7 +421,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2025-07-18 10:43:43" itemprop="dateModified" datetime="2025-07-18T10:43:43+00:00">2025-07-18</time>
+                <time title="Modified: 2025-08-14 09:07:21" itemprop="dateModified" datetime="2025-08-14T09:07:21+00:00">2025-08-14</time>
               </span>
 
           
@@ -497,7 +517,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2025-07-18 10:43:43" itemprop="dateModified" datetime="2025-07-18T10:43:43+00:00">2025-07-18</time>
+                <time title="Modified: 2025-08-14 09:07:21" itemprop="dateModified" datetime="2025-08-14T09:07:21+00:00">2025-08-14</time>
               </span>
 
           
@@ -564,7 +584,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2025-07-18 10:43:43" itemprop="dateModified" datetime="2025-07-18T10:43:43+00:00">2025-07-18</time>
+                <time title="Modified: 2025-08-14 09:07:21" itemprop="dateModified" datetime="2025-08-14T09:07:21+00:00">2025-08-14</time>
               </span>
 
           
@@ -635,7 +655,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2025-07-18 10:43:43" itemprop="dateModified" datetime="2025-07-18T10:43:43+00:00">2025-07-18</time>
+                <time title="Modified: 2025-08-14 09:07:21" itemprop="dateModified" datetime="2025-08-14T09:07:21+00:00">2025-08-14</time>
               </span>
 
           

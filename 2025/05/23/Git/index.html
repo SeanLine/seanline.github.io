@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"seanline.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="新建分支 git checkout -b  git fetch origin git checkout -b  origin&#x2F;&lt;远程分支&gt; git push origin   删除分支 git branch -d  git push origin –delete   提交 git add . git commit -m “commit message” git commit">
+  <meta name="description" content="新建分支 git checkout -b   基于远程建立分支 git fetch origin git branch –no-track  origin&#x2F;&lt;远程分支&gt; git branch  &lt;本地分支&gt; git checkout –no-track -b  origin&#x2F;&lt;远程分支&gt;  分支推上远程 git push origin   拉">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git">
 <meta property="og:url" content="https://seanline.github.io/2025/05/23/Git/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="新建分支 git checkout -b  git fetch origin git checkout -b  origin&#x2F;&lt;远程分支&gt; git push origin   删除分支 git branch -d  git push origin –delete   提交 git add . git commit -m “commit message” git commit">
+<meta property="og:description" content="新建分支 git checkout -b   基于远程建立分支 git fetch origin git branch –no-track  origin&#x2F;&lt;远程分支&gt; git branch  &lt;本地分支&gt; git checkout –no-track -b  origin&#x2F;&lt;远程分支&gt;  分支推上远程 git push origin   拉">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-05-23T14:40:31.000Z">
-<meta property="article:modified_time" content="2025-07-18T10:43:43.941Z">
+<meta property="article:modified_time" content="2025-08-14T09:07:21.065Z">
 <meta property="article:author" content="Sean Mu">
 <meta name="twitter:card" content="summary">
 
@@ -180,7 +180,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2025-07-18 10:43:43" itemprop="dateModified" datetime="2025-07-18T10:43:43+00:00">2025-07-18</time>
+                <time title="Modified: 2025-08-14 09:07:21" itemprop="dateModified" datetime="2025-08-14T09:07:21+00:00">2025-08-14</time>
               </span>
 
           
@@ -196,15 +196,34 @@
       
         <h2 id="新建分支"><a href="#新建分支" class="headerlink" title="新建分支"></a>新建分支</h2><ul>
 <li>git checkout -b <branch-name></li>
+</ul>
+<h3 id="基于远程建立分支"><a href="#基于远程建立分支" class="headerlink" title="基于远程建立分支"></a>基于远程建立分支</h3><ul>
 <li>git fetch origin</li>
-<li>git checkout -b <branch-name> origin&#x2F;&lt;远程分支&gt;</li>
+<li>git branch –no-track <branch-name> origin&#x2F;&lt;远程分支&gt;</li>
+<li>git branch <branch-name> &lt;本地分支&gt;</li>
+<li>git checkout –no-track -b <branch-name> origin&#x2F;&lt;远程分支&gt;</li>
+</ul>
+<h3 id="分支推上远程"><a href="#分支推上远程" class="headerlink" title="分支推上远程"></a>分支推上远程</h3><ul>
 <li>git push origin <branch-name></li>
 </ul>
-<h2 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h2><ul>
+<h3 id="拉去远程分支到本地，并跟踪远程分支"><a href="#拉去远程分支到本地，并跟踪远程分支" class="headerlink" title="拉去远程分支到本地，并跟踪远程分支"></a>拉去远程分支到本地，并跟踪远程分支</h3><ul>
+<li>git checkout –track origin&#x2F;<branch-name></li>
+</ul>
+<h3 id="修改分支名"><a href="#修改分支名" class="headerlink" title="修改分支名"></a>修改分支名</h3><ul>
+<li>git branch -m <old-branch-name> <new-branch-name></li>
+</ul>
+<h3 id="检测分支是否在远程"><a href="#检测分支是否在远程" class="headerlink" title="检测分支是否在远程"></a>检测分支是否在远程</h3><ul>
+<li>git show-branch origin&#x2F;<branch-name></li>
+</ul>
+<h3 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h3><ul>
 <li>git branch -d <branch-name></li>
 <li>git push origin –delete <branch-name></li>
 </ul>
-<h2 id="提交"><a href="#提交" class="headerlink" title="提交"></a>提交</h2><ul>
+<h3 id="查看本地分支关联的远程分支"><a href="#查看本地分支关联的远程分支" class="headerlink" title="查看本地分支关联的远程分支"></a>查看本地分支关联的远程分支</h3><ul>
+<li>git config –get branch.<branch-name>.merge</li>
+<li>git config –get branch.<branch-name>.remote</li>
+</ul>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><h2 id="提交"><a href="#提交" class="headerlink" title="提交"></a>提交</h2><ul>
 <li>git add .</li>
 <li>git commit -m “commit message”</li>
 <li>git commit -m “标题” -m “内容”</li>
@@ -226,6 +245,7 @@
 <li>git reset –hard origin&#x2F;<branch-name></li>
 <li>git reset –hard HEAD^</li>
 <li>git reset –hard HEAD~3</li>
+<li>git reset –soft HEAD~</li>
 </ul>
 
     </div>
@@ -246,7 +266,7 @@
       <i class="fa fa-chevron-left"></i> 基础
     </a></div>
       <div class="post-nav-item">
-    <a href="/2025/07/18/hello-world/" rel="next" title="Hello World">
+    <a href="/2025/08/14/hello-world/" rel="next" title="Hello World">
       Hello World <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
@@ -307,7 +327,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF"><span class="nav-number">1.</span> <span class="nav-text">新建分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E5%88%86%E6%94%AF"><span class="nav-number">2.</span> <span class="nav-text">删除分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%90%E4%BA%A4"><span class="nav-number">3.</span> <span class="nav-text">提交</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A8%E9%80%81%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF"><span class="nav-number">4.</span> <span class="nav-text">推送远程分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%88%E5%B9%B6%E5%88%86%E6%94%AF"><span class="nav-number">5.</span> <span class="nav-text">合并分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%92%A4%E9%94%80"><span class="nav-number">6.</span> <span class="nav-text">撤销</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF"><span class="nav-number">1.</span> <span class="nav-text">新建分支</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E8%BF%9C%E7%A8%8B%E5%BB%BA%E7%AB%8B%E5%88%86%E6%94%AF"><span class="nav-number">1.1.</span> <span class="nav-text">基于远程建立分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E6%94%AF%E6%8E%A8%E4%B8%8A%E8%BF%9C%E7%A8%8B"><span class="nav-number">1.2.</span> <span class="nav-text">分支推上远程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8B%89%E5%8E%BB%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF%E5%88%B0%E6%9C%AC%E5%9C%B0%EF%BC%8C%E5%B9%B6%E8%B7%9F%E8%B8%AA%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF"><span class="nav-number">1.3.</span> <span class="nav-text">拉去远程分支到本地，并跟踪远程分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E5%88%86%E6%94%AF%E5%90%8D"><span class="nav-number">1.4.</span> <span class="nav-text">修改分支名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A3%80%E6%B5%8B%E5%88%86%E6%94%AF%E6%98%AF%E5%90%A6%E5%9C%A8%E8%BF%9C%E7%A8%8B"><span class="nav-number">1.5.</span> <span class="nav-text">检测分支是否在远程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E5%88%86%E6%94%AF"><span class="nav-number">1.6.</span> <span class="nav-text">删除分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E6%9C%AC%E5%9C%B0%E5%88%86%E6%94%AF%E5%85%B3%E8%81%94%E7%9A%84%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF"><span class="nav-number">1.7.</span> <span class="nav-text">查看本地分支关联的远程分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.8.</span> <span class="nav-text"></span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%90%E4%BA%A4"><span class="nav-number">2.</span> <span class="nav-text">提交</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A8%E9%80%81%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF"><span class="nav-number">3.</span> <span class="nav-text">推送远程分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%88%E5%B9%B6%E5%88%86%E6%94%AF"><span class="nav-number">4.</span> <span class="nav-text">合并分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%92%A4%E9%94%80"><span class="nav-number">5.</span> <span class="nav-text">撤销</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
